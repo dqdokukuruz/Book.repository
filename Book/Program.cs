@@ -21,16 +21,21 @@ namespace Book
 
         public void SetTitle(string title)
         {
-            if (title == null || title.Trim().Length < 3)
+            if (title == null)
             {
-                Console.WriteLine("Грешка: Заглавието трябва да съдържа поне 3 символа!");
+                Console.WriteLine("Грешка: Заглавието не може да е празно!");
+                return;
+            }
+
+            if (title.Length < 3)
+            {
+            Console.WriteLine("Грешка: Заглавието трябва да съдържа поне 3 символа!");
             }
             else
             {
-                this.title = title;
+            this.title = title;
             }
         }
-
         public void SetAuthor(string author)
         {
             if (string.IsNullOrWhiteSpace(author))
@@ -77,3 +82,4 @@ namespace Book
     }
 
 }
+
